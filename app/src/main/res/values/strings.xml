@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">LoginSicenet</string>
+    <string name="placeholder_result">Placeholder result value</string>
 </resources>
