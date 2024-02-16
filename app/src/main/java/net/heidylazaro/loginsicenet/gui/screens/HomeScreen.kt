@@ -23,12 +23,12 @@ fun HomeScreen(
 }
 
 @Composable
-fun ResultScreen(cosa: String, modifier: Modifier = Modifier) {
+fun ResultScreen(login: String, modifier: Modifier = Modifier) {
     Box(
         contentAlignment = Alignment.Center,
         modifier = modifier
     ) {
-        Text(text = cosa)
+        Text(text = login)
     }
 }
 
