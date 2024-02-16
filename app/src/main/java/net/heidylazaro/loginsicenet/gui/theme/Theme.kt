@@ -1,4 +1,4 @@
-package net.heidylazaro.loginsicenet.ui.theme
+package net.heidylazaro.loginsicenet.gui.theme
 
 import android.app.Activity
 import android.os.Build
