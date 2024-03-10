@@ -3,7 +3,11 @@ package net.heidylazaro.loginsicenet.network
 import okhttp3.RequestBody
 import okhttp3.ResponseBody
 import retrofit2.Retrofit
-import retrofit2.converter.scalars.ScalarsConverterFactory
+import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import kotlinx.serialization.json.Json
+import okhttp3.MediaType
+import okhttp3.MediaType.Companion.toMediaType
+//import retrofit2.converter.scalars.ScalarsConverterFactory
 import retrofit2.create
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -12,8 +16,12 @@ import retrofit2.http.POST
 private const val BASE_URL = "https://sicenet.surguanajuato.tecnm.mx"
 
 //compilador retrofit
-private val retrofit = Retrofit.Builder().addConverterFactory(ScalarsConverterFactory.create()).baseUrl(
-    BASE_URL).build()
+/*private val retrofit = Retrofit.Builder().addConverterFactory(ScalarsConverterFactory.create()).baseUrl(
+    BASE_URL).build()*/
+private val retrofit = Retrofit.Builder()
+    .addConverterFactory(Json.asConverterFactory("application/json".toMediaType()))
+    .baseUrl(BASE_URL)
+    .build()
 
 val requestBodyXMLText = "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n" +
         "    <soap:Body>\n" +
@@ -34,6 +42,8 @@ interface LoginApiService{
 }
 
 object SicenetApi{
-    val retrofitService: LoginApiService by lazy { retrofit.create(LoginApiService::class.java) }
+    val retrofitService: LoginApiService by lazy {
+        retrofit.create(LoginApiService::class.java)
+    }
 }
 
