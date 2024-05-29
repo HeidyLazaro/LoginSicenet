@@ -13,13 +13,11 @@ import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import net.heidylazaro.loginsicenet.R
 import net.heidylazaro.loginsicenet.gui.screens.HomeScreen
 import net.heidylazaro.loginsicenet.gui.screens.LoginViewModel
-import net.heidylazaro.loginsicenet.model.LoginSicenet
 
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")

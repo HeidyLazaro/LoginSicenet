@@ -1,4 +1,4 @@
-package net.heidylazaro.loginsicenet.model
+package net.heidylazaro.loginsicenet.model.nube
 
 import kotlinx.serialization.Serializable
 
